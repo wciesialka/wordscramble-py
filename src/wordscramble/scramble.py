@@ -1,7 +1,6 @@
-# Import Dict from Typing module for type-hinting
-from typing import Dict
+import wordscramble.key as key
 
-def scramble(word: str, key: Dict[str, str]):
+def scramble(word: str, key: key.Key):
     result = ""
     # Build the result character by character
     for character in word:
@@ -13,8 +12,6 @@ def scramble(word: str, key: Dict[str, str]):
             result += character
     return result
 
-def unscramble(word: str, key: Dict[str, str]):
-    # Create a dictionary that puts the key in reverse,
-    # then use that to "scramble" the word.
-    reverse_key = {v: k for k, v in key.items()}
-    return scramble(word, reverse_key)
+def unscramble(word: str, key: key.Key):
+    # Inverse the key, then use that to "scramble" the word.
+    return scramble(word, key.inverse())

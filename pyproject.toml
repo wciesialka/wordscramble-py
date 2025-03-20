@@ -1,3 +1,12 @@
+# A typical pyproject.toml. This allows us to install the project as a package.
+# This is pretty standard for nice projects.
+#
+# References:
+# “Writing Your Pyproject.Toml.” Writing Your Pyproject.Toml - Python Packaging User Guide,
+#    15 Mar. 2025, packaging.python.org/en/latest/guides/writing-pyproject-toml/. 
+# “Configuring Setuptools Using Pyproject.Toml Files.” Configuring Setuptools Using Pyproject.Toml Files - Setuptools 77.0.3.Post20250320 Documentation,
+#    20 Feb. 2025, setuptools.pypa.io/en/latest/userguide/pyproject_config.html. 
+
 [build-system]
 requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"
