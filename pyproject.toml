@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wordscramble"
+authors = [
+    {name = "Willow Ciesialka", email = "wciesialka@gmail.com"}
+]
+description = "Advanced word scrambler."
+license = {file = "LICENSE"}
+requires-python = ">= 3.12"
+dynamic = ["version","readme","dependencies"]
+
+[tool.setuptools.dynamic]
+version = { attr = "wordscramble.__version__"}
+readme = {file = "README.md", content-type = "text/markdown"}
+dependencies = {file = "requirements.txt"}
+
+[project.urls]
+Repository = "https://github.com/wciesialka/wordscramble-py"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["wordscramble*"]
