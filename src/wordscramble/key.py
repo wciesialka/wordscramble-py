@@ -15,7 +15,7 @@ from copy import deepcopy
 class Key:
     
     def __init__(self, mapping: Dict[str, str]):
-        self.__mapping = mapping
+        self.__mapping = deepcopy(mapping)
     
     # We don't want to let people have access to our direct key dictionary,
     # since dict objects are mutable. Instead, create a deep copy to give them.
@@ -57,7 +57,10 @@ class Key:
         inverse_mapping = {v: k for k, v in self.mapping.items()}
         return Key(inverse_mapping)
 
-    def __getitem__(self, key: str) -> str:
-        if key in self.__mapping:
-            return self.__mapping[key]
-        raise KeyError(f"Key \"{key}\" not found.")
+    def __getitem__(self, index: str) -> str:
+        if index in self.__mapping:
+            return self.__mapping[index]
+        raise KeyError(f"Key \"{index}\" not found.")
+    
+    def __contains__(self, index: str) -> bool:
+        return index in self.__mapping
