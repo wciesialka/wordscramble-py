@@ -11,9 +11,9 @@ Scramble/unscramble text using a randomly generated key. Demo for a student.
 ### Installing
 
 Clone the directory. Then, run `pip install .` in the project directory
- (on the same level as [`pyproject.toml`](pyproject.toml)). It is recommended
- that you first create a virtual environment using the `venv` module and activate
- it, like so:
+(on the same level as [`pyproject.toml`](pyproject.toml)). It is recommended
+that you first create a virtual environment using the `venv` module and activate
+it, like so:
 
 ```bash
 python3 -m venv ./env/
