@@ -2,12 +2,12 @@
 from enum import Enum
 
 # Create a key menu enum
-def KeyMenuChoice(Enum):
+class KeyMenuChoice(Enum):
     GENERATE_NEW_KEY = 1
     IMPORT_KEY = 2
     QUIT = 3
 
-def ScrambleMenuChoice(Enum):
+class ScrambleMenuChoice(Enum):
     SCRAMBLE_MESSAGE = 1
     UNSCRAMBLE_MESSAGE = 2
     NEW_KEY = 3
@@ -20,8 +20,6 @@ def key_menu():
         "2": KeyMenuChoice.IMPORT_KEY,
         "3": KeyMenuChoice.QUIT
     }
-    print("Welcome to Word Scrambler!")
-    print("No key currently loaded.")
     print("Actions:")
     print("\t[1] Generate new key.")
     print("\t[2] Import key.")
